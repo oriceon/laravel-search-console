@@ -1,5 +1,5 @@
 {
-    "name": "schulzefelix/laravel-search-console",
+    "name": "oriceon/laravel-search-console",
     "type": "library",
     "description": "A Laravel package to retrieve data from Google Search Console",
     "keywords": [
@@ -17,12 +17,16 @@
             "email": "github@schulze.co",
             "homepage": "https://schulze.co",
             "role": "Developer"
+        },
+        {
+            "name": "Valentin Ivașcu",
+            "email": "oriceon@gmail.com"
         }
     ],
     "require": {
         "php": "^8.0.2",
         "google/apiclient": "^2.0",
-        "illuminate/support": "^9.0",
+        "illuminate/support": "^9.0|^10.0",
         "symfony/cache": "^6.0"
 
     },

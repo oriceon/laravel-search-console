@@ -107,7 +107,9 @@ class SearchConsole
         $request->setDimensions($dimensions);
         $request->setDataState($dataState);
         $request->setAggregationType($aggregationType);
-        $request->setGroupType($groupType);
+
+        $request->groupType = $groupType;
+
         $request = $this->applyFilters($request, $filters);
 
         return $this->client->performQuery($siteUrl, $rows, $request);

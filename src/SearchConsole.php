@@ -98,7 +98,7 @@ class SearchConsole
      *
      * @throws \Exception
      */
-    public function searchAnalyticsQuery(string $siteUrl, Period $period, array $dimensions = [], array $filters = [], int $rows = 1000, string $searchType = 'web', string $dataState = 'final', string $aggregationType = 'auto')
+    public function searchAnalyticsQuery(string $siteUrl, Period $period, array $dimensions = [], array $filters = [], int $rows = 1000, string $searchType = 'web', string $dataState = 'final', string $aggregationType = 'auto', string $groupType = 'auto')
     {
         $request = new Google_Service_Webmasters_SearchAnalyticsQueryRequest();
         $request->setStartDate($period->startDate->toDateString());
@@ -107,6 +107,7 @@ class SearchConsole
         $request->setDimensions($dimensions);
         $request->setDataState($dataState);
         $request->setAggregationType($aggregationType);
+        $request->setGroupType($groupType);
         $request = $this->applyFilters($request, $filters);
 
         return $this->client->performQuery($siteUrl, $rows, $request);

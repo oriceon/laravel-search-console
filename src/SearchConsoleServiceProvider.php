@@ -50,7 +50,7 @@ class SearchConsoleServiceProvider extends ServiceProvider
      *
      * @throws InvalidConfiguration
      */
-    protected function guardAgainstInvalidConfiguration(array $searchConsoleConfig = [])
+    protected function guardAgainstInvalidConfiguration(?array $searchConsoleConfig = null)
     {
         if ($searchConsoleConfig['auth_type'] == 'service_account' && ! file_exists($searchConsoleConfig['connections']['service_account']['application_credentials'])) {
             throw InvalidConfiguration::credentialsJsonDoesNotExist($searchConsoleConfig['connections']['service_account']['application_credentials']);
